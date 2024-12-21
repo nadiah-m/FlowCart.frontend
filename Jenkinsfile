@@ -33,7 +33,7 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv(credentialsId: 'Sonar', installationName: 'sq1') {
-                    sh 'sonar-scanner \
+                    sh '${scannerHome}/bin/sonar-scanner \
                      -Dsonar.projectKey=nadiah-m_FlowCart.frontend \
                      -Dsonar.organization=nadiah-m'
                 }
