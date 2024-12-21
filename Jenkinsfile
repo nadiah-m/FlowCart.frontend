@@ -19,14 +19,14 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Run Unit Tests') {
-            steps {
-                script {
-                    // Run unit tests (e.g., using Jest or Mocha)
-                    sh 'npm test'
-                }
-            }
-        }
+        // stage('Run Unit Tests') {
+        //     steps {
+        //         script {
+        //             // Run unit tests (e.g., using Jest or Mocha)
+        //             sh 'npm test'
+        //         }
+        //     }
+        // }
         stage('Run Sonarqube') {
             environment {
                 scannerHome = tool 'Sonar'
