@@ -30,21 +30,21 @@ pipeline {
         //         }
         //     }
         // }
-        stage('Run Sonarqube') {
-            environment {
-                scannerHome = tool 'Sonar'
-            }
-            steps {
-                withSonarQubeEnv(credentialsId: 'sonarCred', installationName: 'sq1') {
-                    sh '${scannerHome}/bin/sonar-scanner \
-                     -Dsonar.projectKey=nadiah-m_FlowCart.frontend \
-                     -Dsonar.organization=nadiah-m'
-                }
-                timeout(time: 10, unit: 'MINUTES') {
-                    waitForQualityGate abortPipeline: true
-                }
-            }
-        }
+        // stage('Run Sonarqube') {
+        //     environment {
+        //         scannerHome = tool 'Sonar'
+        //     }
+        //     steps {
+        //         withSonarQubeEnv(credentialsId: 'sonarCred', installationName: 'sq1') {
+        //             sh '${scannerHome}/bin/sonar-scanner \
+        //              -Dsonar.projectKey=nadiah-m_FlowCart.frontend \
+        //              -Dsonar.organization=nadiah-m'
+        //         }
+        //         timeout(time: 10, unit: 'MINUTES') {
+        //             waitForQualityGate abortPipeline: true
+        //         }
+        //     }
+        // }
         stage('Build Docker Image') {
             steps {
                 script {
