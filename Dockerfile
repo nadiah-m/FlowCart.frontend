@@ -16,6 +16,9 @@ COPY . ./
 # Build the React app for production
 RUN npm run build
 
+# List the contents of the build directory
+RUN ls -l /app  # List contents of /app
+
 # Use an Nginx image to serve the app
 FROM nginx:alpine
 
