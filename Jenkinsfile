@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        nodejs 'NodeJS'
+    }
     environment {
         // Define Docker image name and version
         DOCKER_IMAGE = 'nadiah92/flowcart.frontend'
@@ -32,7 +35,7 @@ pipeline {
                 scannerHome = tool 'Sonar'
             }
             steps {
-                withSonarQubeEnv(credentialsId: 'Sonar', installationName: 'sq1') {
+                withSonarQubeEnv(credentialsId: 'sonarCred', installationName: 'sq1') {
                     sh '${scannerHome}/bin/sonar-scanner \
                      -Dsonar.projectKey=nadiah-m_FlowCart.frontend \
                      -Dsonar.organization=nadiah-m'
