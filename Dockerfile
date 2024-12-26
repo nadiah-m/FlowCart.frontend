@@ -23,7 +23,7 @@ RUN ls -l /app  # List contents of /app
 FROM nginx:alpine
 
 # Copy the build artifacts from the build image to Nginx's public directory
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html
 
 # Expose the port on which the app will be available
 EXPOSE 80
