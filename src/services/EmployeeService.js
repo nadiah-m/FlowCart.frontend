@@ -1,7 +1,8 @@
 import axios from "axios";
 //http://localhost:8080/api/v1/orders
-const ORDER_SERVICE_URL = "http://localhost:8080/api/v1/orders";
-const STOCK_SERVICE_URL = "http://localhost:8081/api/stock";
+const host = "flowcart.local";
+const ORDER_SERVICE_URL = host + "/api/v1/orders";
+const STOCK_SERVICE_URL = host + "/api/stock";
 
 export const getOrders = () => axios.get(STOCK_SERVICE_URL);
 
