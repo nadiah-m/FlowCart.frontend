@@ -1,6 +1,6 @@
 import axios from "axios";
 //http://localhost:8080/api/v1/orders
-const host = "http://flowcart.local";
+const host = "http://flowcart.ndhmlk.site/";
 const ORDER_SERVICE_URL = host + "/api/v1/orders";
 const STOCK_SERVICE_URL = host + "/api/stock";
 
